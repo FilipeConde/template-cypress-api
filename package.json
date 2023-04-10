@@ -1,0 +1,30 @@
+{
+  "name": "cypress-api-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "postcy:run": "node ./cypress/multiple-cucumber-html-reporter.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.5.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "jsonschema": "^1.4.1",
+    "multiple-cucumber-html-reporter": "^2.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/integration/",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}
